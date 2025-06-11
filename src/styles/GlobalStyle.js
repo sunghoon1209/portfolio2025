@@ -56,7 +56,13 @@ const GlobalStyle = createGlobalStyle`
      font-family: 'SUIT-Regular';
   }
 
-
+  section h2{
+    color:#0d0f1c;
+    font-size: 22px;
+    font-weight: 700;
+    line-height: 28px;    
+    font-family: 'GmarketSansMedium';        
+  }
 `;
 
 export default GlobalStyle;
