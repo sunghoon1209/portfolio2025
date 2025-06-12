@@ -1,9 +1,9 @@
+import { useEffect,useState } from "react";
+import axios from "axios";
+
+
+
 import styled from "styled-components";
-
-
-
-
-
 const StyledSection = styled.section`
     padding: 16px;
     display: flex;
@@ -39,14 +39,18 @@ const StyledPageTitle = styled.section`
 
 `
 
-const SectionBlock = ({ title, description }) => {
+const SectionBlock = ({ title, contents }) => {
+    
+
     return (
         <>
 
             <StyledSection>
                 <h2>{title}</h2>
-                <p>{description}</p>
+                <p>{contents}</p>
             </StyledSection>
+
+
         </>
     );
 };
@@ -57,6 +61,21 @@ const SectionBlock = ({ title, description }) => {
 
 
 const Detail = ()=>{
+    const [data, setData] = useState(null);
+
+    useEffect(()=>{
+        const fetchData = async ()=>{
+            try{
+                const response = await axios.get('/data/projects.json');
+                setData(response.data);
+                console.log(response.data);
+            }catch(error){
+                console.error('데이터 불러오기 실패:',error)
+            }
+        };
+        fetchData();
+
+    },[])
     return(
         <>      
             <StyledPageTitle>
@@ -64,10 +83,10 @@ const Detail = ()=>{
                 <p></p>
             </StyledPageTitle>           
                   
-            <SectionBlock title={'Project Title'} description={'Responsive Web Design for a Local Business'}></SectionBlock>
-            <SectionBlock title={'Description'} description={'Responsive Web Design for a Local Business'}></SectionBlock>
-            <SectionBlock title={'Skills'} description={'Responsive Web Design for a Local Business'}></SectionBlock>
-            <SectionBlock title={'Project Title'} description={'Responsive Web Design for a Local Business'}></SectionBlock>
+            <SectionBlock title={'Project Title'} contents={data[0].title}></SectionBlock>
+            <SectionBlock title={'Description'} contents={data[0].description}></SectionBlock>
+            <SectionBlock title={'Skills'} contents={data[0].skills}></SectionBlock>
+
         </>
     )
 }
