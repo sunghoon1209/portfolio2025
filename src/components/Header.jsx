@@ -36,10 +36,11 @@ const StyledDarkButton = styled.button`
         display: flex;
         align-items: center;
         font-family: 'GmarketSansMedium';
+        color:inherit;
 `
 
-const Header = ()=>{
-    const [isDark, setIsDark] = useState(false);
+const Header = ({isDarkMode, setIsDarkMode})=>{
+
     return(
         <StyledHeader>
             <StyledHeaderInner>
@@ -49,8 +50,8 @@ const Header = ()=>{
                 <StyledNav>
                     <Link to="/">Home</Link> 
                     <Link to="/project">Project</Link>
-                    <StyledDarkButton onClick={()=>{setIsDark(!isDark)}}>
-                        {isDark?'Lights':'Dark'}
+                    <StyledDarkButton onClick={()=>{setIsDarkMode(!isDarkMode)}}>
+                        {isDarkMode?'Lights':'Dark'}
                     </StyledDarkButton>
                 </StyledNav>
             </StyledHeaderInner>        

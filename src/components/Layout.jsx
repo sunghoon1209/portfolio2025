@@ -10,10 +10,10 @@ const StyledMain =styled.main`
   padding: 20px 160px;
 `
 
-function Layout() {
+function Layout({ isDarkMode, setIsDarkMode }) {
     return (
       <>
-        <Header />
+        <Header isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode}/>
         <StyledMain>
           <Outlet />
         </StyledMain>

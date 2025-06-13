@@ -20,8 +20,8 @@ const StyledTabItem = styled.li`
     display: flex;
     align-items: center;
     justify-content: center;
-    border-radius: 8px;
-    background-color: #e8edf5;
+    border-radius: 8px;    
+    background-color: ${({ isDarkMode }) => (isDarkMode ? '#21364A' : '#e8edf5')};
     font-size: 14px;
     font-weight: 500;
     line-height: 21px;
@@ -59,13 +59,13 @@ const ProjectItem = ({title,id}) =>{
     )
 }
 
-const TabItem = ({text})=>{
+const TabItem = ({text, isDarkMode})=>{
     return(
-        <StyledTabItem>{text}</StyledTabItem>
+        <StyledTabItem isDarkMode={isDarkMode}>{text}</StyledTabItem>
     )
 }
 
-const Project = ()=>{
+const Project = ({isDarkMode})=>{
     const [data, setData] = useState(null);
 
     useEffect(()=>{
@@ -85,10 +85,10 @@ const Project = ()=>{
         <StyledProject>
             <h2>My Works</h2>
             <StyledTabList>
-                <TabItem text={'All Projects'}></TabItem>
-                <TabItem text={'React Projects'}></TabItem>
-                <TabItem text={'개인 프로젝트'}></TabItem>
-                <TabItem text={'실무 프로젝트'}></TabItem>
+                <TabItem text={'All Projects'} isDarkMode={isDarkMode} />
+                <TabItem text={'React Projects'} isDarkMode={isDarkMode} />
+                <TabItem text={'개인 프로젝트'} isDarkMode={isDarkMode} />
+                <TabItem text={'실무 프로젝트'} isDarkMode={isDarkMode} />
             </StyledTabList>
             <StyledProjectList>
                 {data &&

@@ -15,8 +15,9 @@ const GlobalStyle = createGlobalStyle`
     height: 100%;
     font-family: 'Pretendard', sans-serif;
     line-height: 1.4;
-    background-color: #F7FAFC;
-    color: #111;
+    background-color: ${({ isDarkMode }) => (isDarkMode ? '#0F1A24' : '#F7FAFC')};
+    color: ${({ isDarkMode }) => (isDarkMode ? '#fff' : '#111')};
+    
   }
 
   a {
@@ -55,9 +56,11 @@ const GlobalStyle = createGlobalStyle`
   body{
      font-family: 'SUIT-Regular';
   }
-
+  h1{
+    color:inherit;
+  }
   section h2{
-    color:#0d0f1c;
+    color:inherit;
     font-size: 22px;
     font-weight: 700;
     line-height: 28px;    
