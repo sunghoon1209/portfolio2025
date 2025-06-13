@@ -1,5 +1,6 @@
 import { useEffect,useState } from "react";
 import axios from "axios";
+import { useParams } from "react-router-dom";
 
 
 
@@ -61,35 +62,38 @@ const SectionBlock = ({ title, contents }) => {
 
 
 const Detail = ()=>{
+    const {id} =useParams();
     const [data, setData] = useState(null);
 
-    useEffect(()=>{
-        const fetchData = async ()=>{
-            try{
-                const response = await axios.get('/data/projects.json');
-                setData(response.data);
-                console.log(response.data);
-            }catch(error){
-                console.error('데이터 불러오기 실패:',error)
-            }
+    useEffect(() => {
+        const fetchData = async () => {
+          try {
+            const response = await axios.get("/data/projects.json");
+            // 🔍 id 값이 일치하는 객체 찾기 (문자열 비교에 주의)
+            const found = response.data.find(item => String(item.id) === String(id));
+            setData(found);
+            console.log("선택된 데이터:", found);
+          } catch (error) {
+            console.error("데이터 불러오기 실패:", error);
+          }
         };
         fetchData();
+      }, [id]);
+    
+      if (!data) return <p>Loading...</p>;
 
-    },[])
-    return(
-        <>      
-            <StyledPageTitle>
-                <h2>Project Details</h2>
-                <p></p>
-            </StyledPageTitle>           
-                  
-            <SectionBlock title={'Project Title'} contents={data[0].title}></SectionBlock>
-            <SectionBlock title={'Description'} contents={data[0].description}></SectionBlock>
-            <SectionBlock title={'Skills'} contents={data[0].skills}></SectionBlock>
-
+      return (
+        <>
+          <StyledPageTitle>
+            <h2>Project Details</h2>
+          </StyledPageTitle>
+    
+          <SectionBlock title="Project Title" contents={data.title} />
+          <SectionBlock title="Description" contents={data.description} />
+          <SectionBlock title="Skills" contents={data.skills} />
         </>
-    )
-}
+      );
+    };
 
 
 export default Detail;

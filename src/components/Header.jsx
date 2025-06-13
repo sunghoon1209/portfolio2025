@@ -48,7 +48,7 @@ const Header = ()=>{
                 </StyledLogo>
                 <StyledNav>
                     <Link to="/">Home</Link> 
-                    <Link to="/Project">Project</Link>
+                    <Link to="/project">Project</Link>
                     <StyledDarkButton onClick={()=>{setIsDark(!isDark)}}>
                         {isDark?'Lights':'Dark'}
                     </StyledDarkButton>
