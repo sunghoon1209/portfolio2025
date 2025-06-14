@@ -71,7 +71,7 @@ const Project = ({isDarkMode})=>{
     useEffect(()=>{
         const fetchData = async ()=>{
             try{
-                const response = await axios.get('/data/projects.json');
+                const response = await axios.get(`${import.meta.env.BASE_URL}data/projects.json`);
                 setData(response.data);
                 console.log(response.data);
             }catch(error){
