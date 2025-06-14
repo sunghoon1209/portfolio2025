@@ -271,7 +271,7 @@ background-image: url(${({$isDarkMode:a})=>a?tb:PS});
         line-height: 40px;
     }
 
-`,as=({title:a,contents:i})=>Q.jsx(Q.Fragment,{children:Q.jsxs(WE,{children:[Q.jsx("h2",{children:a}),Q.jsx("p",{children:i})]})}),IE=()=>{const{id:a}=Zv(),[i,f]=j.useState(null);return j.useEffect(()=>{(async()=>{try{const d=(await Bt.get("/data/projects.json")).data.find(h=>String(h.id)===String(a));f(d),console.log("선택된 데이터:",d)}catch(s){console.error("데이터 불러오기 실패:",s)}})()},[a]),i?Q.jsxs(Q.Fragment,{children:[Q.jsx(PE,{children:Q.jsx("h2",{children:"Project Details"})}),Q.jsx(as,{title:"Project Title",contents:i.title}),Q.jsx(as,{title:"Description",contents:i.description}),Q.jsx(as,{title:"Skills",contents:i.skills})]}):Q.jsx("p",{children:"Loading..."})},tA=GS`
+`,as=({title:a,contents:i})=>Q.jsx(Q.Fragment,{children:Q.jsxs(WE,{children:[Q.jsx("h2",{children:a}),Q.jsx("p",{children:i})]})}),IE=()=>{const{id:a}=Zv(),[i,f]=j.useState(null);return j.useEffect(()=>{(async()=>{try{const d=(await Bt.get("/portfolio2025/data/projects.json")).data.find(h=>String(h.id)===String(a));f(d),console.log("선택된 데이터:",d)}catch(s){console.error("데이터 불러오기 실패:",s)}})()},[a]),i?Q.jsxs(Q.Fragment,{children:[Q.jsx(PE,{children:Q.jsx("h2",{children:"Project Details"})}),Q.jsx(as,{title:"Project Title",contents:i.title}),Q.jsx(as,{title:"Description",contents:i.description}),Q.jsx(as,{title:"Skills",contents:i.skills})]}):Q.jsx("p",{children:"Loading..."})},tA=GS`
   /* CSS Reset (예: Eric Meyer reset 또는 Normalize) */
   *,
   *::before,
