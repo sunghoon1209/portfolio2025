@@ -235,7 +235,7 @@ background-image: url(${({$isDarkMode:a})=>a?tb:PS});
         transform: translateY(-6px);
         box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);  
     }
-`,$E=({title:a,id:i})=>{const f=_p(),c=s=>{f(`/project/detail/${s}`)};return Q.jsx(kE,{onClick:()=>c(i)})},$i=({text:a,isDarkMode:i})=>Q.jsx(KE,{isDarkMode:i,children:a}),FE=({isDarkMode:a})=>{const[i,f]=j.useState(null);return j.useEffect(()=>{(async()=>{try{const s=await Bt.get("/data/projects.json");f(s.data),console.log(s.data)}catch(s){console.error("데이터 불러오기 실패:",s)}})()},[]),Q.jsxs(VE,{children:[Q.jsx("h2",{children:"My Works"}),Q.jsxs(ZE,{children:[Q.jsx($i,{text:"All Projects",isDarkMode:a}),Q.jsx($i,{text:"React Projects",isDarkMode:a}),Q.jsx($i,{text:"개인 프로젝트",isDarkMode:a}),Q.jsx($i,{text:"실무 프로젝트",isDarkMode:a})]}),Q.jsx(JE,{children:i&&i.map(c=>Q.jsx($E,{title:c.title,id:c.id},c.id))})]})},WE=Ot.section`
+`,$E=({title:a,id:i})=>{const f=_p(),c=s=>{f(`/project/detail/${s}`)};return Q.jsx(kE,{onClick:()=>c(i)})},$i=({text:a,isDarkMode:i})=>Q.jsx(KE,{isDarkMode:i,children:a}),FE=({isDarkMode:a})=>{const[i,f]=j.useState(null);return j.useEffect(()=>{(async()=>{try{const s=await Bt.get("/portfolio2025/data/projects.json");f(s.data),console.log(s.data)}catch(s){console.error("데이터 불러오기 실패:",s)}})()},[]),Q.jsxs(VE,{children:[Q.jsx("h2",{children:"My Works"}),Q.jsxs(ZE,{children:[Q.jsx($i,{text:"All Projects",isDarkMode:a}),Q.jsx($i,{text:"React Projects",isDarkMode:a}),Q.jsx($i,{text:"개인 프로젝트",isDarkMode:a}),Q.jsx($i,{text:"실무 프로젝트",isDarkMode:a})]}),Q.jsx(JE,{children:i&&i.map(c=>Q.jsx($E,{title:c.title,id:c.id},c.id))})]})},WE=Ot.section`
     padding: 16px;
     display: flex;
     flex-direction: column;
