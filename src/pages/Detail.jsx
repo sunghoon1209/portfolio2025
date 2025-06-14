@@ -10,15 +10,18 @@ const StyledSection = styled.section`
     display: flex;
     flex-direction: column;
     gap: 12px;
+    color:inherit;
     h2{
-        color:#0f1417;
+
+          color:inherit;
         font-size: 18px;
         font-weight: 700;
         line-height: 23px;
     }
 
     p{
-        color:#0f1417;
+
+            color:inherit;
         font-size:16px;
         font-weight: 400;
         line-height: 24px;
@@ -32,7 +35,8 @@ const StyledPageTitle = styled.section`
     gap: 12px;
 
     h2{
-        color: #0f1417;
+
+          color:inherit;
         font-size: 32px;
         font-weight: 700;
         line-height: 40px;

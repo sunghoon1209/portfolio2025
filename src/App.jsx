@@ -13,7 +13,7 @@ function App() {
       <GlobalStyle  isDarkMode={isDarkMode}/>
       <Routes>
         <Route path="/" element={<Layout isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />} >
-          <Route index element={<Home />} />
+          <Route index element={<Home isDarkMode={isDarkMode} setIsDarkMode={setIsDarkMode} />}  />
           <Route path="project" element={<Project isDarkMode={isDarkMode} />} />
           <Route path="project/detail/:id" element={<Detail />} />      
           <Route path="*" element={<div>Not Found</div>} />
