@@ -4,7 +4,7 @@
         "title":"SIMTOS 2025",
         "description":"리액트 프로젝트입니다.",
         "skills": ["HTML","SCSS","JS"],
-        "src": "/project/simtos.png",
+        "src": "project/simtos.png",
         "alt" : "SIMTOS2025 캡쳐화면",
         "type" : "company"
     },
@@ -13,7 +13,7 @@
         "title":"더 메종 랜딩/상세 페이지",
         "description":"리액트 프로젝트입니다.2",
         "skills": ["HTML"],
-        "src": "/project/the_maison.png",
+        "src": "project/the_maison.png",
         "alt" : "더 메종 캡쳐화면",
         "type" : "company"
     },
@@ -22,7 +22,7 @@
         "title":"포트폴리오 2025",
         "description":"리액트 프로젝트입니다.2",
         "skills": ["REACT"],
-        "src": "/project/portfolio2025.png",
+        "src": "project/portfolio2025.png",
         "alt" : "포트폴리오2025 캡쳐화면",
         "type" : "personal"
     },
@@ -31,7 +31,7 @@
         "title":"4번프로젝트",
         "description":"리액트 프로젝트입니다.2",
         "skills": ["HTML","css","javascript"],
-        "src": "/project/event.png",
+        "src": "project/event.png",
         "alt" : "이벤트게임페이지 캡쳐화면",
         "type" : "personal"        
     },
@@ -40,7 +40,7 @@
         "title":"5번 프로젝트",
         "description":"리액트 프로젝트입니다.2",
         "skills": ["HTML","CSS","Javascript"],
-        "src": "/project/rythm.png",
+        "src": "project/rythm.png",
         "alt" : "리듬게임 캡쳐화면",
         "type" : "personal"        
     }

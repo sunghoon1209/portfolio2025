@@ -116,7 +116,7 @@ const Project = ({isDarkMode})=>{
                             key={item.id}
                             title={item.title}                            
                             id={item.id}
-                            src={item.src}
+                            src={`${import.meta.env.BASE_URL}${item.src}`} 
                             alt={item.alt}                            
                         />
                 ))}
