@@ -72,7 +72,7 @@ const Detail = ()=>{
     useEffect(() => {
         const fetchData = async () => {
           try {
-            const response = await axios.get("/data/projects.json");
+            const response = await axios.get(`${import.meta.env.BASE_URL}data/projects.json`);
             // 🔍 id 값이 일치하는 객체 찾기 (문자열 비교에 주의)
             const found = response.data.find(item => String(item.id) === String(id));
             setData(found);
