@@ -44,7 +44,7 @@ const StyledPageTitle = styled.section`
 
 `
 
-const SectionBlock = ({ title, contents }) => {
+const SectionBlock = ({ title, contents, children  }) => {
     
 
     return (
@@ -81,6 +81,7 @@ const Detail = ()=>{
             console.error("데이터 불러오기 실패:", error);
           }
         };
+        
         fetchData();
       }, [id]);
     
@@ -94,7 +95,14 @@ const Detail = ()=>{
     
           <SectionBlock title="Project Title" contents={data.title} />
           <SectionBlock title="Description" contents={data.description} />
-          <SectionBlock title="Skills" contents={data.skills} />
+          <SectionBlock title="Skills" >
+          <ul>
+    {data.skills.map((skill, index) => (
+      
+      <li key={index}>{skill}</li>
+    ))}
+  </ul>
+          </SectionBlock>
         </>
       );
     };

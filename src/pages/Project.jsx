@@ -13,6 +13,9 @@ const StyledTabList = styled.ul`
     display: flex;
     padding: 12px;
     gap: 12px;
+    @media (max-width:768px){
+        flex-direction: column;
+    }
 `
 const StyledTabItem = styled.li`
     height: 32px;
@@ -27,6 +30,8 @@ const StyledTabItem = styled.li`
     line-height: 21px;
     font-family: 'GmarketSansMedium';      
     cursor: pointer;
+    
+
 `
 
 const StyledProjectList = styled.ul`
@@ -37,27 +42,41 @@ const StyledProjectList = styled.ul`
 `
 
 const StyledProjectItem = styled.li`
-    width: calc(25% - 9px);
-    aspect-ratio: 4/3;
+    width: calc((100% - 24px)/3);
+    /* aspect-ratio: 16/9; */
     border-radius: 8px;
     background: #fff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
+    border: 2px solid #fff;
     &:hover{
         transform: translateY(-6px);
         box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);  
     }
-`
-const ProjectItem = ({title,id}) =>{
-    const navigate = useNavigate();
 
+    img{
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    @media (max-width:768px){
+        width: 100%;
+    }
+    
+`
+const ProjectItem = ({ title, id, src, alt }) => {
+    const navigate = useNavigate();
+  
     const goToDetail = (id) => {
       navigate(`/project/detail/${id}`);
-    };    
-    return(
-        <StyledProjectItem onClick={() => goToDetail(id)}></StyledProjectItem>
-    )
-}
+    };
+  
+    return (
+      <StyledProjectItem onClick={() => goToDetail(id)}>
+        {src ? <img src={src} alt={alt || title} style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px" }} /> : null}
+      </StyledProjectItem>
+    );
+  };
 
 const TabItem = ({text, isDarkMode})=>{
     return(
@@ -97,6 +116,8 @@ const Project = ({isDarkMode})=>{
                             key={item.id}
                             title={item.title}                            
                             id={item.id}
+                            src={item.src}
+                            alt={item.alt}                            
                         />
                 ))}
             </StyledProjectList>
