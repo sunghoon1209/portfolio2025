@@ -855,7 +855,7 @@ background-image: url(${({$isDarkMode:a})=>a?fT:sT});
         line-height: 40px;
     }
 
-`,af=({title:a,contents:i,children:r})=>X.jsx(X.Fragment,{children:X.jsxs(uR,{children:[X.jsx("h2",{children:a}),X.jsx("p",{children:i})]})}),sR=()=>{const{id:a}=LS(),[i,r]=H.useState(null);return H.useEffect(()=>{(async()=>{try{const f=(await qt.get("/data/projects.json")).data.find(d=>String(d.id)===String(a));r(f),console.log("선택된 데이터:",f)}catch(s){console.error("데이터 불러오기 실패:",s)}})()},[a]),i?X.jsxs(X.Fragment,{children:[X.jsx(oR,{children:X.jsx("h2",{children:"Project Details"})}),X.jsx(af,{title:"Project Title",contents:i.title}),X.jsx(af,{title:"Description",contents:i.description}),X.jsx(af,{title:"Skills",children:X.jsx("ul",{children:i.skills.map((u,s)=>X.jsx("li",{children:u},s))})})]}):X.jsx("p",{children:"Loading..."})},cR=ME`
+`,af=({title:a,contents:i,children:r})=>X.jsx(X.Fragment,{children:X.jsxs(uR,{children:[X.jsx("h2",{children:a}),X.jsx("p",{children:i})]})}),sR=()=>{const{id:a}=LS(),[i,r]=H.useState(null);return H.useEffect(()=>{(async()=>{try{const f=(await qt.get("/portfolio2025/data/projects.json")).data.find(d=>String(d.id)===String(a));r(f),console.log("선택된 데이터:",f)}catch(s){console.error("데이터 불러오기 실패:",s)}})()},[a]),i?X.jsxs(X.Fragment,{children:[X.jsx(oR,{children:X.jsx("h2",{children:"Project Details"})}),X.jsx(af,{title:"Project Title",contents:i.title}),X.jsx(af,{title:"Description",contents:i.description}),X.jsx(af,{title:"Skills",children:X.jsx("ul",{children:i.skills.map((u,s)=>X.jsx("li",{children:u},s))})})]}):X.jsx("p",{children:"Loading..."})},cR=ME`
   /* CSS Reset (예: Eric Meyer reset 또는 Normalize) */
   *,
   *::before,
