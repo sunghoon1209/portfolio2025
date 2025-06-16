@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 import { useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faMoon, faSun  } from "@fortawesome/free-solid-svg-icons";
 
 const StyledLogo = styled.h1`
     font-size: 18px;
@@ -32,7 +34,7 @@ const StyledNav = styled.nav`
 `
 
 const StyledDarkButton = styled.button`
-        font-size:14px;
+        font-size:20px;
         display: flex;
         align-items: center;
         font-family: 'GmarketSansMedium';
@@ -51,7 +53,7 @@ const Header = ({isDarkMode, setIsDarkMode})=>{
                     <Link to="/">Home</Link> 
                     <Link to="/project">Project</Link>
                     <StyledDarkButton onClick={()=>{setIsDarkMode(!isDarkMode)}}>
-                        {isDarkMode?'Lights':'Dark'}
+                        {isDarkMode?<FontAwesomeIcon icon={faSun} />:<FontAwesomeIcon icon={faMoon} />}
                     </StyledDarkButton>
                 </StyledNav>
             </StyledHeaderInner>        
