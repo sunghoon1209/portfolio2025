@@ -8,6 +8,7 @@ const StyledMain =styled.main`
   max-width: 1280px;
   margin: 0 auto;
   padding: 20px 160px;
+  position: relative;
 
     @media (max-width:768px){
       padding: 16px 20px;

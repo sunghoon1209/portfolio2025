@@ -44,11 +44,23 @@ const StyledAboutMe =styled.section`
     p{
         padding:12px 16px;
     }
+
+    @media (max-width:768px){
+        padding:0;
+
+        p{
+            padding: 0;
+        }
+    }
 `
 
 const StyledSkills = styled.section`
     width: 100%;
     padding: 0 16px;
+
+    @media (max-width:768px){
+        padding: 0;
+    }
 `
 const StyledSkillsList =styled.ul`
     display: flex;
@@ -69,16 +81,31 @@ const StyledSkillsList =styled.ul`
         line-height: 21px;
         cursor: pointer;
     }
+
+    @media (max-width:768px){
+        padding: 0;
+
+        li{
+            padding: 0 12px;
+        }
+    }
 `
 
 const StyledSkillsDescription = styled.p`
     padding:12px 16px;
+
+    @media (max-width:768px){
+        padding: 0;
+    }
 
 `
 
 const StyledExperience = styled.section`
     width: 100%;
     padding: 0 16px;
+    @media (max-width:768px){
+        padding: 0;
+    }
 `
 
 const StyledExperienceList = styled.ul`
@@ -86,6 +113,10 @@ const StyledExperienceList = styled.ul`
     display: flex;
     flex-direction: column;
     gap: 8px;
+
+    @media (max-width:768px){
+        padding: 0;
+    }
     
 
 `
@@ -113,6 +144,10 @@ const StyledEducationList = styled.ul`
     flex-direction: column;
     gap: 8px;
 
+    @media (max-width:768px){
+        padding: 0;
+    }
+
 `
 const StyledEducationItem = styled.li`
     padding-left:40px;    
@@ -137,6 +172,10 @@ background-image: url(${({ $isDarkMode }) => $isDarkMode ? educationIconWhite : 
 const StyledEducation = styled.section`
     width: 100%;
     padding: 0 16px;
+
+    @media (max-width:768px){
+        padding: 0;
+    }
 `
 // const StyledContact = styled.section`
 //     width: 100%;

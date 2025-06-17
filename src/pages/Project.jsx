@@ -38,26 +38,37 @@ const StyledProjectList = styled.ul`
     display: flex;
     flex-wrap: wrap;
     padding: 16px;
-    gap: 12px;
+    gap: 18px 12px;
 `
 
 const StyledProjectItem = styled.li`
     width: calc((100% - 24px)/3);
     /* aspect-ratio: 16/9; */
     border-radius: 8px;
-    background: #fff;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
-    border: 2px solid #fff;
-    &:hover{
-        transform: translateY(-6px);
-        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);  
-    }
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+
 
     img{
         width: 100%;
         height: 100%;
         display: block;
+        cursor: pointer;
+        border-radius: 8px;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+
+        &:hover{
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
+            transform: translateY(-4px);
+        }
+    }
+
+    p{
+        text-align: center;
+        font-weight: 600;
+        font-size: 14px;
     }
     @media (max-width:768px){
         width: 100%;
@@ -72,8 +83,9 @@ const ProjectItem = ({ title, id, src, alt }) => {
     };
   
     return (
-      <StyledProjectItem onClick={() => goToDetail(id)}>
-        {src ? <img src={src} alt={alt || title} style={{ width: "100%", height: "100%", objectFit: "cover", borderRadius: "8px" }} /> : null}
+      <StyledProjectItem>
+        {src ? <img src={src} alt={alt || title}  onClick={() => goToDetail(id)}/> : null}
+        <p>{title}</p>
       </StyledProjectItem>
     );
   };
