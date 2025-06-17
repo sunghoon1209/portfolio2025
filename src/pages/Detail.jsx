@@ -73,33 +73,45 @@ const StyledPageTitle = styled.section`
 `
 const StyledPostNav = styled.div`
   display: flex;
-  gap:16px;
+  gap:32px;
   padding:16px; 
   justify-content: end;
   
 
 `
 const SyledButton = styled.button`
-padding: 10px 20px;
-  background-color: ${({ isDark }) => (isDark ? "#21364A" : "#f0f0f0")};
-  color: ${({ isDark }) => (isDark ? "#fff" : "#333")};
-  border: 1px solid ${({ isDark }) => (isDark ? "#2e4a66" : "#ccc")};
-  border-radius: 8px;
+  
+  background-color: none;
+  color: inherit;  
+  font-family: 'GmarketSansMedium';
+  border: none;
   font-size: 14px;
-  font-weight: 500;
+  font-weight: 800;
   cursor: pointer;
   transition: all 0.2s ease;
+  position: relative;
+  padding-bottom: 5px;
 
-  &:hover {
-    background-color: ${({ isDark }) => (isDark ? "#2e4a66" : "#e2e2e2")};
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  &::before{
+    content: "";
+    height: 1px;
+    width: 0%;
+    background: #000;
+    position: absolute;
+    bottom: 0;
+    transition: 0.5s;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  &:hover::before{
+    content: "";
+    height: 1px;
+    width: 100%;
+    background: #000;
+    position: absolute;
+
   }
 
-  &:active {
-    transform: translateY(0);
-    box-shadow: none;
-  }
 `;
 
 
