@@ -74,26 +74,33 @@ const StyledPageTitle = styled.section`
 const StyledPostNav = styled.div`
   display: flex;
   gap:16px;
+  padding:16px; 
+  justify-content: end;
   
-  position: absolute;
-  top: 36px;
-  right: 176px;
+
 `
 const SyledButton = styled.button`
-  padding: 6px 14px;
-  border: 1px solid #ccc;
+padding: 10px 20px;
+  background-color: ${({ isDark }) => (isDark ? "#21364A" : "#f0f0f0")};
+  color: ${({ isDark }) => (isDark ? "#fff" : "#333")};
+  border: 1px solid ${({ isDark }) => (isDark ? "#2e4a66" : "#ccc")};
   border-radius: 8px;
-  background-color: #fff;
-  color: #333;
-  text-decoration: none;
   font-size: 14px;
+  font-weight: 500;
+  cursor: pointer;
   transition: all 0.2s ease;
 
-   &:hover{
-    background-color: #f2f2f2;
-    border-color: #999;
-   }
-`
+  &:hover {
+    background-color: ${({ isDark }) => (isDark ? "#2e4a66" : "#e2e2e2")};
+    transform: translateY(-2px);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  }
+
+  &:active {
+    transform: translateY(0);
+    box-shadow: none;
+  }
+`;
 
 
 const SectionBlock = ({ title, contents, children }) => {
@@ -133,9 +140,10 @@ const PostNav = ({id, dataLength})=>{
   console.log(dataLength)
   return(
     <StyledPostNav>
-      <SyledButton onClick={()=>{goToList()}}>목록</SyledButton>
-      {id-1 ==0?null: <SyledButton onClick={()=>{goToDetail(id-1)}}>이전</SyledButton>}
-      {id == dataLength?null:<SyledButton onClick={()=>{goToDetail(id+1)}}>다음</SyledButton>}
+      <SyledButton onClick={()=>{goToList()}}>List</SyledButton>
+      {id-1 ==0?null: <SyledButton onClick={()=>{goToDetail(id-1)}}>Prev</SyledButton>}
+      
+      {id == dataLength?null:<SyledButton onClick={()=>{goToDetail(id+1)}}>Next</SyledButton>}
       
       
       
@@ -173,11 +181,15 @@ const Detail = ()=>{
 
       return (
         <>
+         <PostNav id={numericId} dataLength={dataLength}/>
           <StyledPageTitle>
             <h2>Project Details</h2>
           </StyledPageTitle>
     
           <SectionBlock title="Project Title" contents={data.title} />
+          <SectionBlock title="URL">
+            <a href={data.url} target="_blank">{data.url}</a>
+          </SectionBlock>
           <SectionBlock title="Description" contents={data.description} />
           <SectionBlock title="Skills" >
           <ul>
@@ -188,7 +200,7 @@ const Detail = ()=>{
           </SectionBlock>
           
           <SectionImgBlock title="Project Image" src={data.src} />
-          <PostNav id={numericId} dataLength={dataLength}/>
+         
         </>
       );
     };
