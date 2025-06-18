@@ -23,6 +23,9 @@ const StyledHeaderInner = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 0 40px;
+    @media (max-width:768px){
+      padding: 0 10px;
+    }
 `
 
 const StyledNav = styled.nav`
@@ -30,6 +33,10 @@ const StyledNav = styled.nav`
     gap: 36px;
     align-items: center;
     font-family: 'GmarketSansMedium';
+    @media (max-width:768px){
+        gap: 18px;
+        font-size: 14px;
+    }
 
 `
 
@@ -39,6 +46,9 @@ const StyledDarkButton = styled.button`
         align-items: center;
         font-family: 'GmarketSansMedium';
         color:inherit;
+        @media (max-width:768px){        
+        font-size: 14px;
+    }
 `
 
 const Header = ({isDarkMode, setIsDarkMode})=>{

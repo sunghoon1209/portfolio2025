@@ -66,6 +66,12 @@ const GlobalStyle = createGlobalStyle`
     line-height: 28px;    
     font-family: 'GmarketSansMedium';        
   }
+
+  a {
+  display: inline-block; /* 또는 block */
+  word-break: break-all; /* 단어 중간에서도 줄바꿈 */
+  white-space: normal;   /* 줄바꿈 가능하게 */
+}  
 `;
 
 export default GlobalStyle;

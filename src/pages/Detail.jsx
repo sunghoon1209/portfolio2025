@@ -31,6 +31,10 @@ const StyledSection = styled.section`
       display: flex;
       gap: 18px;
     }
+    @media (max-width:768px){
+      padding: 12px 0;
+      gap: 6px;
+    }
     
 `
 const StyledImgSection = styled.section`
@@ -52,7 +56,13 @@ const StyledImgSection = styled.section`
       display: block;
       box-shadow: 0 12px 32px rgba(0, 0, 0, 0.15);
     }
+    @media (max-width:768px){
+      padding: 6px 0;
+      gap: 6px;
+    }
     
+
+ 
 `
 
 
@@ -68,6 +78,10 @@ const StyledPageTitle = styled.section`
         font-size: 32px;
         font-weight: 700;
         line-height: 40px;
+    }
+    @media (max-width:768px){
+      padding: 0;
+      
     }
 
 `
@@ -194,22 +208,23 @@ const Detail = ()=>{
       return (
         <>
          <PostNav id={numericId} dataLength={dataLength}/>
-          <StyledPageTitle>
-            <h2>Project Details</h2>
-          </StyledPageTitle>
     
           <SectionBlock title="Project Title" contents={data.title} />
           <SectionBlock title="URL">
             <a href={data.url} target="_blank">{data.url}</a>
           </SectionBlock>
-          <SectionBlock title="Description" contents={data.description} />
+          <SectionBlock title="Date" contents={data.date}>
+
+          </SectionBlock>
           <SectionBlock title="Skills" >
           <ul>
             {data.skills.map((skill, index) => (
               <li key={index}>{skill}</li>
             ))}
           </ul>
-          </SectionBlock>
+          </SectionBlock>          
+          <SectionBlock title="Description" contents={data.description} />
+
           
           <SectionImgBlock title="Project Image" src={data.src} />
          
