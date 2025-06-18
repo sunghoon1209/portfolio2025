@@ -18,7 +18,7 @@
         "alt" : "SIMTOS2025 캡쳐화면",
         "type" : "company",
         "date" : "2025.5",
-        "url" : ""
+        "url" : "https://simtos.org/kor/index.do"
     },
     {
         "id":"3",
@@ -29,12 +29,12 @@
         "alt" : "더 메종 캡쳐화면",
         "type" : "company",
         "date" : "2025.4" ,
-        "url" : ""
+        "url" : "https://fd.sysforu.co.kr/2025/themaison_landing/"
     },
     {
         "id":"4",
         "title":"JS게임",
-        "description":"리액트 프로젝트입니다.2",
+        "description": "자바스크립트로 다양한 미니 게임을 구현한 프로젝트입니다. 빙고 게임, 뽑기, 가위바위보 게임은 직접 플레이 가능하며, 룰렛과 마블 게임은 현재 개발 중입니다.",
         "skills": ["HTML","css","javascript"],
         "src": "project/event.png",
         "alt" : "이벤트게임페이지 캡쳐화면",
@@ -45,7 +45,7 @@
     {
         "id":"5",
         "title":"JS리듬게임",
-        "description":"리액트 프로젝트입니다.2",
+        "description": "HTML, CSS, JavaScript만으로 구현한 간단한 리듬게임입니다. 각 라인에 노트가 떨어지고, 타이밍에 맞춰 버튼을 클릭하면 판정(Perfect/Combo/Miss)과 점수가 표시됩니다. DOM 조작, 이벤트 처리, 애니메이션 효과 등을 활용하여 UI 인터랙션과 게임 로직을 직접 구현했습니다.",
         "skills": ["HTML","CSS","Javascript"],
         "src": "project/rythm.png",
         "alt" : "리듬게임 캡쳐화면",
@@ -56,8 +56,8 @@
     {
         "id":"6",
         "title":"포트폴리오 2024",
-        "description":"6개월간의 퍼블리셔 과정 수료 후에 제작한 포트폴리오입니다.",
-        "skills": ["HTML","CSS","Javascript"],
+        "description": "웹 퍼블리셔 과정을 수료한 후 제작한 포트폴리오로, 학습한 기술을 바탕으로 완성한 프로젝트들과 자기소개 페이지를 포함하고 있습니다. 반응형 페이지이며 유지보수와 가독성 향상을 위해 BEM 방법론으로 HTML에 CLass를 적용하였습니다. 또한 초기에는 데이터들을 따로 분리 없이 하드 코딩 하였으나 취업 후 Ajax를 공부하여 JSON 형태에서 데이터를 가져오는 형식으로 변경하였습니다.",
+        "skills": ["HTML","CSS","Javascript","JQuery"],
         "src": "project/portfolio2024.png",
         "alt" : "포트폴리오2024 캡쳐화면",
         "type" : "personal",
