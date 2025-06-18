@@ -1,46 +1,50 @@
 [    {
         "id":"1",
         "title":"포트폴리오 2025",
-        "description":"리액트 프로젝트입니다.2",
+        "description":"AI 기반 디자인 툴인 구글 Stitch의 피그마 시안을 바탕으로 제작한 리액트 포트폴리오입니다. 빌드 도구는 Vite를 사용하였으며, 스타일은 Styled-components로 구성하였습니다. React Router DOM을 통해 라우팅을 구현했고, 다크모드는 useState를 활용하여 props로 상태를 전달하고 관리하였습니다. 프로젝트 소개 섹션은 JSON 파일로 데이터를 관리하며, Axios와 useEffect를 이용해 비동기로 불러오도록 구성했습니다. 불러온 데이터는 filter 메서드를 통해 카테고리별로 정렬하는 기능도 포함되어 있습니다.",
         "skills": ["REACT"],
         "src": "project/portfolio2025.png",
-        "alt" : "포트폴리오2025 캡쳐화면",
+        "alt" : "2025 포트폴리오 이미지",
         "type" : "personal",
         "date" : "2025.5" ,
-        "url" : "https://sunghoon1209.github.io/portfolio2025/"
+        "url" : "https://sunghoon1209.github.io/portfolio2025/",
+        "gitUrl" : "https://github.com/sunghoon1209/portfolio2025"
     },
     {
         "id":"2",
-        "title":"SIMTOS 2025",
-        "description":"리액트 프로젝트입니다.",
-        "skills": ["HTML","SCSS","JS"],
+        "title":"SIMTOS 2026",
+        "description":"시스포유 재직 중 퍼블리싱한 SIMTOS2026 웹사이트입니다. 피그마 디자인 시안을 기반으로 전체 페이지를 단독으로 제작하였으며, 전시회 소개부터 참가업체 및 참관객 등록까지 아우르는 기능을 구현하였습니다. 초기에는 SCSS로 스타일링했으나, 사내 정책 변경으로 최근 CSS로 마이그레이션을 진행하였습니다.",
+        "skills": ["HTML","SCSS","JS", "CSS"],
         "src": "project/simtos.png",
-        "alt" : "SIMTOS2025 캡쳐화면",
+        "alt" : "SIMTOS2026 캡쳐화면",
         "type" : "company",
         "date" : "2025.5",
-        "url" : "https://simtos.org/kor/index.do"
+        "url" : "https://simtos.org/kor/index.do",
+        "gitUrl" : ""
     },
     {
         "id":"3",
         "title":"더 메종 랜딩/상세 페이지",
-        "description":"리액트 프로젝트입니다.2",
+        "description":"시스포유 재직 당시, 더 메종 2025 행사 관련 별도의 초청장 등록 페이지와 연결되는 SPA 형태의 안내 페이지를 제작하였습니다. 해당 페이지는 전시 안내, 기획관, 디자인살롱 서울로 구성되어 있으며, 초청장 등록으로 이동하기 위해서는 별도의 URL 파라미터가 필요하기 때문에 하단의 URL을 통해 직접 접근은 불가능합니다. 빌드 도구로는 Vite를 사용하고, CSS로 스타일링하였으며, React Router를 통해 페이지 전환을 처리하고 framer-motion으로 부드러운 전환 효과를 구현하였습니다.",
         "skills": ["REACT"],
         "src": "project/the_maison.png",
         "alt" : "더 메종 캡쳐화면",
         "type" : "company",
         "date" : "2025.4" ,
-        "url" : "https://fd.sysforu.co.kr/2025/themaison_landing/"
+        "url" : "https://fd.sysforu.co.kr/2025/themaison_landing/",
+        "gitUrl" : ""
     },
     {
         "id":"4",
         "title":"JS게임",
-        "description": "자바스크립트로 다양한 미니 게임을 구현한 프로젝트입니다. 빙고 게임, 뽑기, 가위바위보 게임은 직접 플레이 가능하며, 룰렛과 마블 게임은 현재 개발 중입니다.",
+        "description": "자바스크립트로 다양한 미니 게임을 구현한 프로젝트입니다. 빙고 게임, 뽑기, 가위바위보 게임은 직접 플레이 가능하며, 룰렛과 마블 게임은 현재 개발 중입니다. 모바일 가로 모드에 맞춰서 제작하였습니다.",
         "skills": ["HTML","css","javascript"],
         "src": "project/event.png",
         "alt" : "이벤트게임페이지 캡쳐화면",
         "type" : "personal",
         "date" : "2025.5" ,
-        "url" : "https://sunghoon1209.github.io/eventpage/Bingo.html"
+        "url" : "https://sunghoon1209.github.io/eventpage/Bingo.html",
+        "gitUrl" : "https://github.com/sunghoon1209/eventpage"
     },
     {
         "id":"5",
@@ -51,7 +55,8 @@
         "alt" : "리듬게임 캡쳐화면",
         "type" : "personal",
         "date" : "2025.5" ,
-        "url" : "https://sunghoon1209.github.io/rythm/"
+        "url" : "https://sunghoon1209.github.io/rythm/",
+        "gitUrl" : "https://github.com/sunghoon1209/rythm"
     },
     {
         "id":"6",
@@ -62,7 +67,8 @@
         "alt" : "포트폴리오2024 캡쳐화면",
         "type" : "personal",
         "date" : "2024.4" ,
-        "url" : "https://sunghoon1209.github.io/PortfolioNew/works.html"
+        "url" : "https://sunghoon1209.github.io/PortfolioNew/",
+        "gitUrl" : "https://github.com/sunghoon1209/portfolioNew"
     }
     
 ]
