@@ -14,7 +14,7 @@ const StyledTabList = styled.ul`
     padding: 12px;
     gap: 12px;
     @media (max-width:768px){
-        flex-direction: column;
+       flex-wrap: wrap;
     }
 `
 const StyledTabItem = styled.li`
@@ -30,7 +30,11 @@ const StyledTabItem = styled.li`
     line-height: 21px;
     font-family: 'GmarketSansMedium';      
     cursor: pointer;
-    
+    @media (max-width:768px){
+      padding: 0;
+      width: calc(50% - 6px);
+
+    }
 
 `
 

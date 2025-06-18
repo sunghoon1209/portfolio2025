@@ -2,10 +2,14 @@ import { useEffect,useState } from "react";
 import axios from "axios";
 import { useParams } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faGithub } from "@fortawesome/free-brands-svg-icons";
+import { faHome } from "@fortawesome/free-solid-svg-icons";
 
 
 import styled from "styled-components";
 const StyledSection = styled.section`
+    
     padding: 16px;
     display: flex;
     flex-direction: column;
@@ -37,6 +41,44 @@ const StyledSection = styled.section`
     }
     
 `
+
+const StyledSectionLink = styled.section`
+    padding: 16px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px 24px;
+    color:inherit;
+    h2{
+      width: 100%;
+          color:inherit;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 23px;
+    }
+
+    p{
+
+        color:inherit;
+        font-size:16px;
+        font-weight: 400;
+        line-height: 24px;
+    }
+    a{
+      font-size: 24px;
+    }
+    ul{
+      display: flex;
+      gap: 18px;
+    }
+    @media (max-width:768px){
+      padding: 12px 0;
+      gap: 6px;
+    }
+    
+`
+
+
+
 const StyledImgSection = styled.section`
     padding: 16px;
     display: flex;
@@ -66,30 +108,13 @@ const StyledImgSection = styled.section`
 `
 
 
-const StyledPageTitle = styled.section`
-    padding: 16px;
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
 
-    h2{
-
-          color:inherit;
-        font-size: 32px;
-        font-weight: 700;
-        line-height: 40px;
-    }
-    @media (max-width:768px){
-      padding: 0;
-      
-    }
-
-`
 const StyledPostNav = styled.div`
   display: flex;
   gap:32px;
   padding:16px; 
   justify-content: end;
+  width: 100%;
   
 
 `
@@ -136,6 +161,15 @@ const SectionBlock = ({ title, contents, children }) => {
       {children ? children : <p>{contents}</p>}
       
     </StyledSection>
+  );
+};
+const SectionBlockLink = ({ title, contents, children }) => {
+  return (
+    <StyledSectionLink>
+      <h2>{title}</h2>
+      {children ? children : <p>{contents}</p>}
+      
+    </StyledSectionLink>
   );
 };
 
@@ -210,9 +244,11 @@ const Detail = ()=>{
          <PostNav id={numericId} dataLength={dataLength}/>
     
           <SectionBlock title="Project Title" contents={data.title} />
-          <SectionBlock title="URL">
-            <a href={data.url} target="_blank">{data.url}</a>
-          </SectionBlock>
+          <SectionBlockLink title="Link">
+            <a href={data.url} target="_blank"><FontAwesomeIcon icon={faHome} /></a>
+            {data.gitUrl?<a href={data.gitUrl} target="_blank"><FontAwesomeIcon icon={faGithub} /></a>:null}
+            
+          </SectionBlockLink>
           <SectionBlock title="Date" contents={data.date}>
 
           </SectionBlock>
