@@ -90,21 +90,41 @@ const ProjectItem = ({ title, id, src, alt }) => {
     );
   };
 
-const TabItem = ({text, isDarkMode})=>{
+const TabItem = ({text, isDarkMode, onClick})=>{
     return(
-        <StyledTabItem isDarkMode={isDarkMode}>{text}</StyledTabItem>
+        <StyledTabItem isDarkMode={isDarkMode} onClick={onClick}>{text}</StyledTabItem>
     )
 }
 
 const Project = ({isDarkMode})=>{
     const [data, setData] = useState(null);
+    const [originData, setOriginData] = useState(null);
+
+    const handleSort = (type)=>{
+        let base = originData; 
+        if(type == 'react'){
+           // console.log(data);           
+           const filterdData = base.filter((item)=> item.skills.includes('REACT'));
+        //    console.log(filterdData);
+            setData(filterdData);
+            
+        }else if(type =='personal'){
+            const filterdData = base.filter((item)=> item.type.includes(type))
+            setData(filterdData);
+        }else if(type =='company'){
+            const filterdData = base.filter((item)=> item.type.includes(type))
+            setData(filterdData);
+        } else {
+            setData(originData); 
+        }
+    }
 
     useEffect(()=>{
         const fetchData = async ()=>{
             try{
                 const response = await axios.get(`${import.meta.env.BASE_URL}data/projects.json`);
                 setData(response.data);
-                console.log(response.data);
+                setOriginData(response.data);
             }catch(error){
                 console.error('데이터 불러오기 실패:',error)
             }
@@ -116,10 +136,10 @@ const Project = ({isDarkMode})=>{
         <StyledProject>
             <h2>My Works</h2>
             <StyledTabList>
-                <TabItem text={'All Projects'} isDarkMode={isDarkMode} />
-                <TabItem text={'React Projects'} isDarkMode={isDarkMode} />
-                <TabItem text={'개인 프로젝트'} isDarkMode={isDarkMode} />
-                <TabItem text={'실무 프로젝트'} isDarkMode={isDarkMode} />
+                <TabItem text={'All Projects'} isDarkMode={isDarkMode} onClick={() => handleSort()}/>
+                <TabItem text={'React Projects'} isDarkMode={isDarkMode} onClick={() => handleSort('react')} />
+                <TabItem text={'개인 프로젝트'} isDarkMode={isDarkMode} onClick={() => handleSort('personal')}/>
+                <TabItem text={'실무 프로젝트'} isDarkMode={isDarkMode} onClick={() => handleSort('company')}/>
             </StyledTabList>
             <StyledProjectList>
                 {data &&
